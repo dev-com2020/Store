@@ -1,0 +1,12 @@
+<div class="float-right">
+    <small>Koszyk:
+        <span *ngIf="cart.itemCount > 0">
+                {{ cart.itemCount }} produtk(ów)
+                {{ cart.cartPrice | currency:"PLN":"symbol":undefined:"pl-PL" }}
+        </span>
+        <span *ngIf="cart.itemCount == 0">Koszyk jest pusty</span>
+    </small>
+    <button class="btn btn-sm bg-dark text-white" [disabled]="cart.itemCount == 0" routerLink="/cart" routerLinkActive="router-link-active" >
+        <i class="fa fa-shopping-cart"></i>
+    </button>
+</div>
